@@ -1,0 +1,67 @@
+.tree-of-trees {
+
+  display: grid;
+
+  grid-template-columns: repeat(10, 1fr);
+
+  aspect-ratio: 5/6;
+
+  width: calc(90vmin / 6 * 5);
+
+}
+
+.tree{
+
+  --gradient: conic-gradient(from 146.31deg at top, #000 67.38deg, #0000 0);
+
+  --mask-image: var(--gradient), var(--gradient), var(--gradient), var(--gradient);
+
+  --mask-position: 50% 0, 50% 20%, 50% 50%, 50% 100%;
+
+  --mask-size: 40% 25%, 60% 37.5%, 80% 50%, 100% 62.5%;
+
+  --mask-repeat: no-repeat;
+
+  mask-image: var(--mask-image);
+
+  mask-position: var(--mask-position);
+
+  mask-size: var(--mask-size);
+
+  mask-repeat: var(--mask-repeat);
+
+  -webkit-mask-image: var(--mask-image);
+
+  -webkit-mask-position: var(--mask-position);
+
+  -webkit-mask-size: var(--mask-size);
+
+  -webkit-mask-repeat: var(--mask-repeat);
+
+  
+
+  background: 
+
+    repeating-linear-gradient(hsl(0 0 0 / .5) 0 5%, hsl(0 0 0 / 0) 25%),
+
+    linear-gradient( hsl(100 50% 50%) 25%, hsl(100 50% 40%) 0 50%, hsl(100 50% 30%) 0 75%, hsl(100 50% 20%) 0);
+
+  
+
+  grid-column-end: span 2;
+
+  &:nth-child(1){ grid-column-start: 5 }
+
+  &:nth-child(2){ grid-column-start: 4 }
+
+  &:nth-child(4){ grid-column-start: 3 }
+
+  &:nth-child(7){ grid-column-start: 2 }
+
+}
+
+body { margin: 0; height: 100vh; display: grid; place-items: center}
+
+/* somehow the thumbnail image is not displaying anything, no idea why */
+
+body{animation:nothing 0 forwards}@keyframes nothing{to{}}
